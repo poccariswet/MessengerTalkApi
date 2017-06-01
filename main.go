@@ -10,6 +10,8 @@ import (
 	"net/url"
 	"os"
 	"time"
+
+	"github.com/soeyusuke/fb-bot/talk"
 )
 
 var accessToken = os.Getenv("ACCESS_TOKEN")
@@ -110,7 +112,8 @@ func sentTextMessage(senderID string, text string) {
 	recipient.ID = senderID
 	m := new(SendMessage)
 	m.Recipient = *recipient
-	m.Message.Text = text
+	m.Message.Text = talk.TalkApi(text)
+
 	b, err := json.Marshal(m)
 	if err != nil {
 		log.Print(err)
