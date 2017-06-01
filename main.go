@@ -11,7 +11,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/soeyusuke/fb-bot/talk"
+	"github.com/soeyusuke/messengerBot/talk"
 )
 
 var accessToken = os.Getenv("ACCESS_TOKEN")
